@@ -17,6 +17,7 @@ import lombok.Data;
 @Data
 public class SearchResponse implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	@SerializedName("resultCount")
 	private Integer resultCount;
 	@SerializedName("results")
