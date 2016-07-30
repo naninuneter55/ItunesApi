@@ -19,7 +19,7 @@ import com.wind_now.itunes_api.search.SearchBuilder;
  *
  * @author ono
  */
-public class Search implements Serializable{
+public class Search implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	static final Logger logger = LoggerFactory.getLogger(Search.class);
@@ -29,14 +29,14 @@ public class Search implements Serializable{
 		logger.info("[{}] search() - result {} items. Completed.",
 			term,
 			String.valueOf(response.getResults().size()));
-        return(response);
-    }
+		return (response);
+	}
 
 	@SuppressWarnings("unchecked")
-	private <T, S> T invoke(S arg, Builder builder, Class<T> clazz){
-        T result;
-        Director director = new Director(builder);
-        result = (T)director.construct(arg, clazz);
-        return result;
-    }
+	private <T, S> T invoke(S arg, Builder builder, Class<T> clazz) {
+		T result;
+		Director director = new Director(builder);
+		result = (T) director.construct(arg, clazz);
+		return result;
+	}
 }

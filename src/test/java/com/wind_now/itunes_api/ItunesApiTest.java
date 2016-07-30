@@ -22,33 +22,33 @@ import com.wind_now.itunes_api.beans.SearchResponse;
  */
 public class ItunesApiTest {
 
-    public ItunesApiTest() {
-    }
+	public ItunesApiTest() {
+	}
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
+	@BeforeClass
+	public static void setUpClass() {
+	}
 
-    @AfterClass
-    public static void tearDownClass() {
-    }
+	@AfterClass
+	public static void tearDownClass() {
+	}
 
-    @Before
-    public void setUp() {
-    }
+	@Before
+	public void setUp() {
+	}
 
-    @After
-    public void tearDown() {
-    }
+	@After
+	public void tearDown() {
+	}
 
-    @Test
-    public void search() throws Exception{
-        String term = "シエナ・ウィンド";
-        Search search = new Search();
-        SearchResponse res = search.search(term);
-        Integer actual = res.getResultCount();
-        Integer expected = 50;
-        assertThat(actual, is(expected));
-    }
+	@Test
+	public void search() throws Exception {
+		String term = "シエナ・ウィンド";
+		Search search = new Search();
+		SearchResponse res = search.search(term);
+		Integer actual = res.getResultCount();
+		Integer expected = 50;
+		assertThat(actual, is(expected));
+	}
 
 }

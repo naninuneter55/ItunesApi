@@ -24,58 +24,58 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Builder {
 
-    final String URL_SCHEME = "http";
-    final String URL_HOST = "ax.itunes.apple.com";
-    final String URL_PATH = "/WebObjects/MZStoreServices.woa/wa/wsSearch";
+	final String URL_SCHEME = "http";
+	final String URL_HOST = "ax.itunes.apple.com";
+	final String URL_PATH = "/WebObjects/MZStoreServices.woa/wa/wsSearch";
 	static final Logger logger = LoggerFactory.getLogger(Search.class);
 
-    public abstract URI getUri(String term);
+	public abstract URI getUri(String term);
 
-    protected <T> T getResult(String url, Class<T> clazz) {
-        T pi = null;
-        try {
-            String json = readUrl(url);
-            Gson gson = new Gson();
-            pi = gson.fromJson(json, clazz);
-        } catch (Exception ex) {
-            logger.error(ex.toString());
-        }
-        return pi;
-    }
+	protected <T> T getResult(String url, Class<T> clazz) {
+		T pi = null;
+		try {
+			String json = readUrl(url);
+			Gson gson = new Gson();
+			pi = gson.fromJson(json, clazz);
+		} catch (Exception ex) {
+			logger.error(ex.toString());
+		}
+		return pi;
+	}
 
-    protected URI getUri(List<NameValuePair> params){
-        URI uri;
-        try{
-            uri = new URIBuilder()
-                    .setScheme(URL_SCHEME)
-                    .setHost(URL_HOST)
-                    .setPath(URL_PATH)
-                    .setParameters(params)
-                    .build();
-            logger.info("getUri() : {}", uri.toString());
-        }catch(URISyntaxException e){
-            logger.error(e.toString());
-            uri = null;
-        }
-        return uri;
-    }
-    
-    protected String readUrl(String urlString) throws Exception {
-        BufferedReader reader = null;
-        try {
-            URL url = new URL(urlString);
-            reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-            StringBuilder buffer = new StringBuilder();
-            int read;
-            char[] chars = new char[1024];
-            while ((read = reader.read(chars)) != -1) {
-                buffer.append(chars, 0, read);
-            }
-            return buffer.toString();
-        } finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-    }
+	protected URI getUri(List<NameValuePair> params) {
+		URI uri;
+		try {
+			uri = new URIBuilder()
+				.setScheme(URL_SCHEME)
+				.setHost(URL_HOST)
+				.setPath(URL_PATH)
+				.setParameters(params)
+				.build();
+			logger.info("getUri() : {}", uri.toString());
+		} catch (URISyntaxException e) {
+			logger.error(e.toString());
+			uri = null;
+		}
+		return uri;
+	}
+
+	protected String readUrl(String urlString) throws Exception {
+		BufferedReader reader = null;
+		try {
+			URL url = new URL(urlString);
+			reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+			StringBuilder buffer = new StringBuilder();
+			int read;
+			char[] chars = new char[1024];
+			while ((read = reader.read(chars)) != -1) {
+				buffer.append(chars, 0, read);
+			}
+			return buffer.toString();
+		} finally {
+			if (reader != null) {
+				reader.close();
+			}
+		}
+	}
 }

@@ -17,96 +17,96 @@ import lombok.Data;
 @Data
 public class SearchResponse implements Serializable {
 
-    @SerializedName("resultCount")
-    private Integer resultCount;
-    @SerializedName("results")
-    private List<Result> results;
+	@SerializedName("resultCount")
+	private Integer resultCount;
+	@SerializedName("results")
+	private List<Result> results;
 
-    @Data
-    public class Result {
+	@Data
+	public class Result {
 
-        @SerializedName("wrapperType")
-        private String wrapperType;
+		@SerializedName("wrapperType")
+		private String wrapperType;
 
-        @SerializedName("kind")
-        private String kind;
+		@SerializedName("kind")
+		private String kind;
 
-        @SerializedName("artistId")
-        private String artistId;
+		@SerializedName("artistId")
+		private String artistId;
 
-        @SerializedName("collectionId")
-        private String collectionId;
+		@SerializedName("collectionId")
+		private String collectionId;
 
-        @SerializedName("trackId")
-        private String trackId;
+		@SerializedName("trackId")
+		private String trackId;
 
-        @SerializedName("artistName")
-        private String artistName;
+		@SerializedName("artistName")
+		private String artistName;
 
-        @SerializedName("collectionName")
-        private String collectionName;
+		@SerializedName("collectionName")
+		private String collectionName;
 
-        @SerializedName("trackName")
-        private String trackName;
+		@SerializedName("trackName")
+		private String trackName;
 
-        @SerializedName("collectionCensoredName")
-        private String collectionCensoredName;
+		@SerializedName("collectionCensoredName")
+		private String collectionCensoredName;
 
-        @SerializedName("trackCensoredName")
-        private String trackCensoredName;
+		@SerializedName("trackCensoredName")
+		private String trackCensoredName;
 
-        @SerializedName("artistViewUrl")
-        private String artistViewUrl;
+		@SerializedName("artistViewUrl")
+		private String artistViewUrl;
 
-        @SerializedName("collectionViewUrl")
-        private String collectionViewUrl;
+		@SerializedName("collectionViewUrl")
+		private String collectionViewUrl;
 
-        @SerializedName("trackViewUrl")
-        private String trackViewUrl;
+		@SerializedName("trackViewUrl")
+		private String trackViewUrl;
 
-        @SerializedName("previewUrl")
-        private String previewUrl;
+		@SerializedName("previewUrl")
+		private String previewUrl;
 
-        @SerializedName("artworkUrl60")
-        private String artworkUrl60;
+		@SerializedName("artworkUrl60")
+		private String artworkUrl60;
 
-        @SerializedName("artworkUrl100")
-        private String artworkUrl100;
+		@SerializedName("artworkUrl100")
+		private String artworkUrl100;
 
-        @SerializedName("collectionPrice")
-        private String collectionPrice;
+		@SerializedName("collectionPrice")
+		private String collectionPrice;
 
-        @SerializedName("trackPrice")
-        private String trackPrice;
+		@SerializedName("trackPrice")
+		private String trackPrice;
 
-        @SerializedName("collectionExplicitness")
-        private String collectionExplicitness;
+		@SerializedName("collectionExplicitness")
+		private String collectionExplicitness;
 
-        @SerializedName("trackExplicitness")
-        private String trackExplicitness;
+		@SerializedName("trackExplicitness")
+		private String trackExplicitness;
 
-        @SerializedName("discCount")
-        private String discCount;
+		@SerializedName("discCount")
+		private String discCount;
 
-        @SerializedName("discNumber")
-        private String discNumber;
+		@SerializedName("discNumber")
+		private String discNumber;
 
-        @SerializedName("trackCount")
-        private String trackCount;
+		@SerializedName("trackCount")
+		private String trackCount;
 
-        @SerializedName("trackNumber")
-        private String trackNumber;
+		@SerializedName("trackNumber")
+		private String trackNumber;
 
-        @SerializedName("trackTimeMillis")
-        private String trackTimeMillis;
+		@SerializedName("trackTimeMillis")
+		private String trackTimeMillis;
 
-        @SerializedName("country")
-        private String country;
+		@SerializedName("country")
+		private String country;
 
-        @SerializedName("currency")
-        private String currency;
+		@SerializedName("currency")
+		private String currency;
 
-        @SerializedName("primaryGenreName")
-        private String primaryGenreName;
-    }
+		@SerializedName("primaryGenreName")
+		private String primaryGenreName;
+	}
 }

@@ -15,16 +15,16 @@ import org.apache.http.message.BasicNameValuePair;
  *
  * @author ono
  */
-public class SearchBuilder extends Builder{
+public class SearchBuilder extends Builder {
 
-    @Override
-    public URI getUri(String term) {
-        List<NameValuePair> params = new ArrayList<>();
-        params.add(new BasicNameValuePair("term", term));
-        params.add(new BasicNameValuePair("media", "music"));
-        params.add(new BasicNameValuePair("entity", "musicTrack"));
-        params.add(new BasicNameValuePair("country", "JP"));
-        return(getUri(params));
-    }
+	@Override
+	public URI getUri(String term) {
+		List<NameValuePair> params = new ArrayList<>();
+		params.add(new BasicNameValuePair("term", term));
+		params.add(new BasicNameValuePair("media", "music"));
+		params.add(new BasicNameValuePair("entity", "musicTrack"));
+		params.add(new BasicNameValuePair("country", "JP"));
+		return (getUri(params));
+	}
 
 }
